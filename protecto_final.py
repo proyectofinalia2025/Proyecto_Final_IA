@@ -13,18 +13,17 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from google.colab import drive
 import matplotlib.ticker as mtick
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import tree
 
 """#CARGA DE DATOS"""
 
-drive.mount('/content/drive')
 
-file_path = "/content/drive/MyDrive/base proyecto final.xlsx"
-df = pd.read_excel(file_path)
-df
+url = r'C:\Users\DRA01\Desktop\pruebas_v2\base proyecto final.xlsx'
+
+df = pd.read_excel(url)
+
 
 df['GRADUADOS'].plot(kind='box', title='Distribución de Graduados')
 
@@ -133,7 +132,7 @@ conocimiento_counts = df2.groupby('ÁREA DE CONOCIMIENTO')['GRADUADOS'].sum()
 print(conocimiento_counts)
 
 # Calcular la sumatoria de GRADUADOS por SEXO
-sexo_counts = df2.groupby('SEXO')['GRADUADOS'].sum()
+#sexo_counts = df2.groupby('SEXO')['GRADUADOS'].sum()
 
 # Definir función para mostrar el porcentaje y el valor absoluto
 def porcentaje_y_absoluto(pct, total_vals):
@@ -762,9 +761,6 @@ import lightgbm as lgb
 import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder, StandardScaler
-from keras.models import Sequential
-from keras.layers import Dense, Dropout
-from keras.callbacks import EarlyStopping
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 from sklearn.tree import plot_tree
 from imblearn.under_sampling import RandomUnderSampler
