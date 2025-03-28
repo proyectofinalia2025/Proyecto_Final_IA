@@ -739,7 +739,7 @@ kbins = KBinsDiscretizer(n_bins=4, encode='ordinal', strategy='uniform')
 df2['INGRESO'] = kbins.fit_transform(df2[['INGRESO']]).astype(int)
 
 # Ver distribución después del agrupamiento
-print(df2['INGRESO'].value_counts())
+print(df2['INGRESO'].value_counts()) 
 
 """**MODELO: ARBOL DE DECISIONES**"""
 
