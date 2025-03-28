@@ -12,3 +12,6 @@ matplotlib
 numpy
 catboost
 imblearn
+lightgbm
+xgboost
+keras
